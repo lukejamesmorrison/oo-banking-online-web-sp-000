@@ -19,7 +19,7 @@ class Transfer
     if !has_sufficient_funds?(@sender)
       "Transaction rejected. Please check your account balance."
     end
-    
+
     if valid? && !transfer_exists?
       # Subtract amount from sender
       @sender.balance -= amount
