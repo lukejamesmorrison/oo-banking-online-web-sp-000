@@ -16,12 +16,8 @@ class Transfer
   end
 
   def execute_transaction
-    if !@sender.valid? || @sender.balance < @amount
-      @status = 'rejected'
-      return "Transaction rejected. Please check your account balance."
-    end
 
-    if valid? && !transfer_exists?
+    if valid? && !transfer_exists? && @sender.balance >= @amount
       # Subtract amount from sender
       @sender.balance -= amount
       # Add amount to receiver
@@ -30,6 +26,9 @@ class Transfer
       @status = 'complete'
       # Add tranfer to @@all to prevent duplicates
       @@all << self
+    else
+      @status = 'rejected'
+      return "Transaction rejected. Please check your account balance."
     end
 
     return 'hey'
