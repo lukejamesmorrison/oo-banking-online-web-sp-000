@@ -19,6 +19,8 @@ class Transfer
       @sender.balance -= amount
       # Add amount to receiver
       @receiver.deposit(amount)
+
+      @status = 'complete'
     end
   end
 
