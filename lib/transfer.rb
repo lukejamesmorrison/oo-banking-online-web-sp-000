@@ -36,4 +36,7 @@ class Transfer
     @@all.include?(self)
   end
 
+  def reverse_transfer
+  end
+
 end
