@@ -9,6 +9,7 @@ class Transfer
     @receiver = receiver
     @status = 'pending'
     @amount = amount
+    @@all << self
   end
 
   def valid?
