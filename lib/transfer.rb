@@ -37,7 +37,7 @@ class Transfer
   end
 
   def has_sufficient_funds?(account)
-    account.balance > 0 && account.balance >= @amount
+    account.valid? && account.balance >= @amount
   end
 
 end
