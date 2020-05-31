@@ -26,6 +26,10 @@ class Transfer
       # Add tranfer to @@all to prevent duplicates
       @@all << self
     end
+
+    def transfer_exists?
+      @@all.include?(self)
+    end
   end
 
 end
