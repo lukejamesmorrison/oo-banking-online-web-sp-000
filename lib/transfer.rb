@@ -31,6 +31,8 @@ class Transfer
       # Add tranfer to @@all to prevent duplicates
       @@all << self
     end
+
+    return 'hey'
   end
 
   def transfer_exists?
