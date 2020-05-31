@@ -37,7 +37,9 @@ class Transfer
   end
 
   def reverse_transfer
-    
+    if transfer_exists?
+      
+    end
   end
 
 end
