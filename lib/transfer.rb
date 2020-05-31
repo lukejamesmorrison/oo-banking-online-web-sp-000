@@ -26,14 +26,14 @@ class Transfer
       # Add tranfer to @@all to prevent duplicates
       @@all << self
     end
+  end
 
-    def transfer_exists?
-      @@all.include?(self)
-    end
+  def transfer_exists?
+    @@all.include?(self)
+  end
 
-    def has_sufficient_funds?(account)
-      account.balance > 0
-    end
+  def has_sufficient_funds?(account)
+    account.balance > 0
   end
 
 end
