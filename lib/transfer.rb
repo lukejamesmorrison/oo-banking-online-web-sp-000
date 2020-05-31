@@ -20,6 +20,8 @@ class Transfer
       return "Transaction rejected. Please check your account balance."
     end
 
+    return "Transaction rejected. Please check your account balance."
+
     if valid? && !transfer_exists?
       # Subtract amount from sender
       @sender.balance -= amount
