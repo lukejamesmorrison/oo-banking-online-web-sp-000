@@ -16,8 +16,8 @@ class Transfer
   end
 
   def execute_transaction
-    if !@sender.balance > 0
-      return "Transaction rejected. Please check your account balance."
+    if !has_sufficient_funds?(@sender)
+      "Transaction rejected. Please check your account balance."
     end
 
     if valid? && !transfer_exists?
