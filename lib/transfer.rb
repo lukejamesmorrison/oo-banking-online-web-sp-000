@@ -23,7 +23,7 @@ class Transfer
       @receiver.deposit(amount)
       # Update status to complete
       @status = 'complete'
-
+      # Add tranfer to @@all
       @@all << self
     end
   end
