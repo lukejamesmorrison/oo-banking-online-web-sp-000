@@ -16,7 +16,7 @@ class Transfer
   end
 
   def execute_transaction
-    if valid?
+    if valid? && !@@all.include?(self)
       # Subtract amount from sender
       @sender.balance -= amount
       # Add amount to receiver
