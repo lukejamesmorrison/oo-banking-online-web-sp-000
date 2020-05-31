@@ -36,8 +36,4 @@ class Transfer
     @@all.include?(self)
   end
 
-  def has_sufficient_funds?(account)
-
-  end
-
 end
