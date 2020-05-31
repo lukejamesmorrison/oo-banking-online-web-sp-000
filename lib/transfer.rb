@@ -14,7 +14,12 @@ class Transfer
   end
 
   def execute_transaction
-    
+    if valid?
+      # Subtract amount from sender
+      @sender.balance -= amount
+      # Add amount to receiver
+      @receiver.deposit(amount)
+    end
   end
 
 end
