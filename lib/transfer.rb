@@ -9,7 +9,6 @@ class Transfer
     @receiver = receiver
     @status = 'pending'
     @amount = amount
-    @@all << self
   end
 
   def valid?
@@ -24,6 +23,8 @@ class Transfer
       @receiver.deposit(amount)
       # Update status to complete
       @status = 'complete'
+
+      @@all << self
     end
   end
 
