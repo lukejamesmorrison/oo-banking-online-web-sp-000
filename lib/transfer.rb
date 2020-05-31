@@ -16,7 +16,9 @@ class Transfer
   end
 
   def execute_transaction
-    if valid? && !transfer_exists? && has_sufficient_funds?(@sender)
+    if valid?
+      && !transfer_exists?
+      && has_sufficient_funds?(@sender)
       # Subtract amount from sender
       @sender.balance -= amount
       # Add amount to receiver
