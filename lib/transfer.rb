@@ -19,7 +19,7 @@ class Transfer
 
     if valid? && !transfer_exists? && @sender.balance >= @amount
       # Subtract amount from sender
-      @sender.balance -= amount
+      @sender.withdraw(amount)
       # Add amount to receiver
       @receiver.deposit(amount)
       # Update status to complete
@@ -39,7 +39,7 @@ class Transfer
   def reverse_transfer
     if transfer_exists?
       # Subtract amount from receiver
-      @receiver.balance -= amount
+      @receiver.withdraw(amount)
       # Add amount to sender
       @sender.deposit(amount)
       # Update status to complete
